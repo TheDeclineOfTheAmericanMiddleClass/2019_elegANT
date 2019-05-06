@@ -33,8 +33,7 @@ class View:
 
     def change_view_state(self, state):
         if self.state == state:
-            return
-        self.state = state
+            self.state = state
         # Destroy all UI elements that are no longer needed
         self.elements = {}
         # Construct new UI elements for the requested state
@@ -278,25 +277,21 @@ class InputBox(UIElement):
         pygame.draw.rect(self.view.screen, self.color, self.rect, 2)
 
 
-'''
-Expected usage of View class by Controller class
+# Expected usage of View class by Controller class
 
 class Controller:
     def __init__(self):
-        
         self.view = View(1300, 800)
         self.view.change_view_state(View.STARTVIEW)
-        
         # start_message = self.view.get_element_by_id("headline")
         # first_button = self.view.get_element_by_id("start_button")
         # text_button = self.view.get_element_by_id("starttext")
-        
-        #start_button.on("click", greet)
-        #first_button.on("hover", lambda: print("Hover!"))
-        
-        #self.game_loop()
-        
-    
+
+        # start_button.on("click", greet)
+        # first_button.on("hover", lambda: print("Hover!"))
+
+        # self.game_loop()
+
     def game_loop(self):
         while True:
             self.view.events()
@@ -305,8 +300,4 @@ class Controller:
 controller = Controller()
 controller.game_loop()
 
-
 # In[ ]:
-
-
-'''
